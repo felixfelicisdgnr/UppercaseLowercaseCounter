@@ -2,25 +2,24 @@ package org.example;
 
 import java.util.Scanner;
 
+
 public class Service {
     public static int maxCharCount(Scanner scanner) {
         int maxCharCount;
         while (true) {
             System.out.print("Maksimum karakter sayısını belirleyin: ");
-            if (scanner.hasNextInt() && scanner.nextInt() > 0) {
-                maxCharCount = scanner.nextInt();
-
+            if (scanner.hasNextInt() && (maxCharCount = scanner.nextInt()) > 0) {
+                scanner.nextLine();
                 break;
             } else {
                 System.out.println("Lütfen geçerli bir sayı girin.");
-                scanner.nextLine();  // hatalı girişi temizlemek için
+                scanner.nextLine();
             }
         }
         return maxCharCount;
     }
 
     public static String enterSentence(Scanner scanner, int maxCharCount) {
-        scanner.nextLine();
         String sentence;
         while (true) {
             System.out.print("Lütfen bir cümle girin: ");
@@ -86,4 +85,3 @@ public class Service {
         return count;
     }
 }
-
